@@ -1,0 +1,177 @@
+appConfig:
+  language: fr
+  layout: auto
+  iconSize: medium
+  theme: callisto
+  customColors:
+    callisto:
+      primary: '#5c90eb'
+      background: '#141b33'
+      background-darker: '#060913'
+  startingView: default
+  defaultOpeningMethod: newtab
+  statusCheck: false
+  statusCheckInterval: 1
+  faviconApi: allesedv
+  routingMode: history
+  enableMultiTasking: false
+  widgetsAlwaysUseProxy: false
+  webSearch:
+    disableWebSearch: true
+    searchEngine: duckduckgo
+    openingMethod: newtab
+    searchBangs: {}
+  enableFontAwesome: true
+  enableMaterialDesignIcons: false
+  hideComponents:
+    hideHeading: false
+    hideNav: false
+    hideSearch: false
+    hideSettings: false
+    hideFooter: true
+  auth:
+    enableGuestAccess: false
+    users: []
+    enableKeycloak: false
+  showSplashScreen: false
+  preventWriteToDisk: false
+  preventLocalSave: false
+  disableConfiguration: false
+  disableConfigurationForNonAdmin: false
+  allowConfigEdit: true
+  enableServiceWorker: false
+  disableContextMenu: false
+  disableUpdateChecks: false
+  disableSmartSort: false
+  enableErrorReporting: false
+  colCount: 6
+pageInfo:
+  title: HOME-LAB
+  description: ''
+  navLinks: []
+  footerText: ''
+sections:
+  - name: Local Services
+    items:
+      - &ref_0
+        title: PF-EXT
+        icon: >-
+          https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png
+        url: https://192.168.1.254/
+        id: 0_1359_pfext
+      - &ref_1
+        title: Crafty
+        icon: >-
+          https://gitlab.com/uploads/-/system/project/avatar/20430749/Crafty_4-0_Logo_square.ico
+        url: https://xxxxxxxxxxxxxxxxxx.fr48000/panel/dashboard
+        id: 1_1359_crafty
+      - &ref_2
+        title: Site-web
+        icon: https://cdn-icons-png.flaticon.com/512/3621/3621454.png
+        url: https://hloureiro.fr
+        id: 2_1359_siteweb
+      - &ref_3
+        title: Proxmox
+        icon: >-
+          https://camo.githubusercontent.com/cb6c50486cf76c4a9a9a4c7811f8bf97f59f7512d11119a386021086997cae0e/68747470733a2f2f7777772e70726f786d6f782e636f6d2f696d616765732f70726f786d6f782f50726f786d6f785f73796d626f6c5f7374616e646172645f6865782e706e67
+        url: https://192.168.0.252:8006
+        id: 3_1359_proxmox
+      - &ref_4
+        title: Nas
+        icon: https://cdn-icons-png.flaticon.com/512/4943/4943962.png
+        url: http://192.168.0.253/detail.html
+        id: 4_1359_nas
+      - &ref_5
+        title: Portainer
+        icon: >-
+          https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_200,h_200/https://api.charmhub.io/api/v1/media/download/charm_Owpj9CsDEMZwVtup3ZTxxs0FtyvDqb2o_icon_5cef79c2d18f67464f39c8f2cf2d7ebb815b0071f04d3ffbb94f49fddd3ab666.png
+        url: http://192.168.1.1:9000
+        id: 5_1359_portainer
+      - &ref_6
+        title: PING
+        icon: >-
+          https://play-lh.googleusercontent.com/98vDt9V6Q50hOEyPILbY_xtV756-rJTrL45h8_tn0eNNxHanLBEw8noIacgRoR6zo90=w240-h480-rw
+        url: http://192.168.1.1:8081/dashboard
+        id: 6_1359_ping
+      - &ref_7
+        title: Guacamol
+        icon: >-
+          https://upload.wikimedia.org/wikipedia/commons/3/31/Apache_Guacamole_logo.png
+        url: http://192.168.1.1:8080
+        id: 7_1359_guacamol
+      - &ref_8
+        title: Jellyfin
+        icon: >-
+          https://f-droid.org/repo/org.jellyfin.mobile/en-US/icon_Y46m-eV538ASL9vG0piH5BI4dC1PHilt0tKyKCVp_F0=.png
+        url: https://xxxxxxxxxxxxxxxxxxx.fr:48920/
+        id: 8_1359_jellyfin
+      - &ref_9
+        title: AVATAR
+        icon: >-
+          https://cdna.artstation.com/p/assets/images/images/030/066/046/medium/clark-coots-avatarsymbolsthumbnail.jpg?1599502212
+        url: https://XXXXXXX.FR.ovh
+        id: 9_1359_avatar
+    filteredItems:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_4
+      - *ref_5
+      - *ref_6
+      - *ref_7
+      - *ref_8
+      - *ref_9
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 6
+      collapsed: false
+      hideForGuests: false
+  - name: Proxmox
+    widgets:
+      - type: gl-cpu-history
+        options:
+          label: CPU
+          hostname: http://192.168.0.252:61208
+          limit: 150
+        id: 0_765_glcpuhistory
+      - type: gl-mem-history
+        options:
+          label: RAM
+          hostname: http://192.168.0.252:61208
+          limit: 150
+        id: 1_765_glmemhistory
+    filteredItems: []
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+  - name: Uptime-Kuma
+    widgets:
+      - type: gl-ip-address
+        options:
+          hostname: http://192.168.0.252:61208
+        id: 0_1071_glipaddress
+      - type: stat-ping
+        useProxy: true
+        updateInterval: 20
+        options:
+          hostname: http://192.168.1.1:8081
+          showChart: false
+          showInfo: false
+        id: 1_1071_statping
+      - type: gl-cpu-temp
+        options:
+          hostname: http://192.168.0.252:61208
+          units: C
+        id: 2_1071_glcputemp
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    filteredItems: []
